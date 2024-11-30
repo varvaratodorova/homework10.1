@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введіть ім'я та прізвище: ");
+        string fullName = Console.ReadLine();
+
+        string[] nameParts = fullName.Split(' ');
+
+        if (nameParts.Length != 2)
+        {
+            Console.WriteLine("Будь ласка, введіть ім'я та прізвище через пробіл.");
+            return;
+        }
+
+        string firstName = nameParts[0];
+        string lastName = nameParts[1];
+
+        if (char.ToLower(firstName[0]) == char.ToLower(lastName[0]))
+        {
+            Console.WriteLine("Прізвище починається на ту ж літеру, що і ім’я.");
+        }
+        else
+        {
+            Console.WriteLine("Прізвище не починається на ту ж літеру, що і ім’я.");
+        }
+    }
+}
